@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #c82727;
+  animation: backgroundAppear 0.75s forwards;
+}
+
+@keyframes backgroundAppear {
+  0% {
+    background: linear-gradient(to bottom, transparent 0%, #c82727 100%);
+    background-size: 100% 200%;
+    background-position: top;
+  }
+  100% {
+    background: linear-gradient(to bottom, transparent 0%, #c82727 100%);
+    background-size: 100% 200%;
+    background-position: bottom;
+  }
+}
