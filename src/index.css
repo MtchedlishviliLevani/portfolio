@@ -14,6 +14,13 @@
   animation: backgroundAppear 0.75s forwards;
 }
 
+@media screen and (min-width: 768px) {
+  .btn {
+    background-color: transparent;
+    animation: initial;
+  }
+}
+
 @keyframes backgroundAppear {
   0% {
     background: linear-gradient(to bottom, transparent 0%, #c82727 100%);
@@ -25,4 +32,20 @@
     background-size: 100% 200%;
     background-position: bottom;
   }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 2s linear;
+  animation-delay: 5s;
 }
