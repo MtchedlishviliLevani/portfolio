@@ -23,6 +23,7 @@ export default {
         center: true,
         screens: {
           sm: "100%",
+          "2xl": "1540px",
         },
         padding: {
           DEFAULT: "5%",
@@ -30,7 +31,7 @@ export default {
           md: "5%",
           lg: "5%",
           xl: "2.5%",
-          "2xl": "2.5%",
+          "2xl": "0",
         },
       },
       maxWidth: {

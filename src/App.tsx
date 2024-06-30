@@ -15,8 +15,8 @@ function App() {
   }, []);
   return (
     <>
-      <LoadingScreen isOpenScreenLoad={isOpenScreenLoad} />
-      <MainComp />
+      {isOpenScreenLoad ? <LoadingScreen isOpenScreenLoad={isOpenScreenLoad} /> : <MainComp />
+      }
     </>
   )
 }

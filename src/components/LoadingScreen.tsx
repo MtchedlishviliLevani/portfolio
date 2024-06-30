@@ -11,7 +11,7 @@ export default function LoadingScreen({ isOpenScreenLoad }: { isOpenScreenLoad: 
                     transition={{ duration: .5 }}
                     exit={{ y: 1500, transition: { duration: 1 } }}
 
-                    className='w-full h-screen bg-loadedScreenBgColor flex justify-center items-center '
+                    className='w-full h-screen bg-loadedScreenBgColor flex justify-center items-center  '
                 >
                     <motion.img initial={{ y: -1500 }} animate={{ y: 0 }} transition={{ duration: 1 }} src={BgImage} className='w-[300px] ' alt="" />
 

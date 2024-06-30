@@ -45,7 +45,34 @@
   }
 }
 
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.arrow {
+  animation: moveLeft 1s linear;
+  animation-iteration-count: infinite;
+}
+
 .fade-in-left {
   animation: fadeInLeft 2s linear;
   animation-delay: 5s;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.scrollDownAnimation {
+  animation: scrollDown cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite 1s;
 }
