@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import Header from "./Header"
 import HomePage from "./HomePage"
 import About from "./About"
+import Projects from "./Projects"
 function MainComp() {
     return (
         <motion.div
@@ -13,6 +14,7 @@ function MainComp() {
             </div>
             <main>
                 <About />
+                <Projects />
             </main>
         </motion.div>
     )

@@ -73,6 +73,6 @@
   }
 }
 
-.scrollDownAnimation {
-  animation: scrollDown cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite 1s;
+.card-shadow {
+  box-shadow: 0 5px 12px 0 rgba(19, 19, 19, 0.15);
 }
