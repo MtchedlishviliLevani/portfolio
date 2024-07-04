@@ -9,10 +9,8 @@ function Projects() {
                 <div className='py-[30px]'>
                     <h2 className='text-[48px] text-white text-center '>Projects</h2>
                 </div>
-
                 <div className='flex gap-[50px] justify-center'>
                     <div className='bg-[#2f114d78] rounded-lg w-[300px] h-[400px] '>
-
                         <img className=' rounded-t-lg  cursor-pointer group-hover:text-blue-700 '
                             src="" alt='project-img' />
                         <h2 className='text-center text-[#ff2d9f] mt-[40px] text-[24px] font-bold group group-hover:text-red-400'>ManageMent web APP</h2>
@@ -20,7 +18,6 @@ function Projects() {
                             <button className='  text-white text-[24px] '>See Live</button>
                             <img className='w-[40px] cursor-pointer' src="/icons_github-fill.png" alt="github-icon" />
                         </div>
-
                     </div>
                     <div className='w-[300px] h-[400px] bg-white rounded-lg'></div>
                     <div className='w-[300px] h-[400px] bg-white rounded-lg'></div>
