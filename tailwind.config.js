@@ -23,7 +23,7 @@ export default {
         center: true,
         screens: {
           sm: "100%",
-          "2xl": "1540px",
+          "2xl": "1200px",
         },
         padding: {
           DEFAULT: "5%",

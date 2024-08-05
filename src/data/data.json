@@ -1,0 +1,78 @@
+{
+  "header": {
+    "title": "My Portfolio",
+    "navigation": ["Home", "About", "Projects", "Contact"]
+  },
+  "heroSection": {
+    "title": "Welcome to My Portfolio",
+    "subtitle": "Front-End Developer | React.js Enthusiast",
+    "backgroundImage": "/hero-background.jpg"
+  },
+  "projects": [
+    {
+      "title": "Audiophile Ecommerce Page",
+      "imageSrc": "/audiophile-ecommerce-website.png",
+      "description": "A productivity management tool.",
+      "techIcons": [
+        "/tailwindIcon.png",
+        "/logos_react.png",
+        "/framer-motion-logo.png"
+      ]
+    },
+    {
+      "title": "Entertainment-Web-App ",
+      "imageSrc": "/entertainment-web-app.png",
+      "description": "An online shopping platform.",
+      "techIcons": ["/tailwindIcon.png", "/logos_react.png"]
+    },
+    {
+      "title": "Dev-Jobs Web App",
+      "imageSrc": "/devjobs.png",
+      "description": "A social networking application.",
+      "techIcons": [
+        "/tailwindIcon.png",
+        "/logos_react.png",
+        "/framer-motion-logo.png"
+      ]
+    },
+    {
+      "title": "Kanban Managment Web App",
+      "imageSrc": "/task-management-website.png",
+      "description": "A social networking application.",
+      "techIcons": [
+        "/tailwindIcon.png",
+        "/logos_react.png",
+        "/framer-motion-logo.png"
+      ]
+    },
+    {
+      "title": "Password Generator",
+      "imageSrc": "/password-generator.png",
+      "description": "A social networking application.",
+      "techIcons": [
+        "/tailwindIcon.png",
+        "/logos_react.png",
+        "/framer-motion-logo.png"
+      ]
+    },
+    {
+      "title": "Planets Web Page",
+      "imageSrc": "/planet-fact-site.png",
+      "description": "A social networking application.",
+      "techIcons": [
+        "/tailwindIcon.png",
+        "/logos_react.png",
+        "/framer-motion-logo.png"
+      ]
+    }
+  ],
+  "about": {
+    "title": "About Me",
+    "content": "I am a front-end developer with a passion for creating dynamic and responsive web applications using React.js and Tailwind CSS."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "email": "email@example.com",
+    "phone": "123-456-7890"
+  }
+}

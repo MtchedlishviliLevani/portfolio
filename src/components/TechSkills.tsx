@@ -17,7 +17,7 @@ export default function TechSkills() {
 
     ];
     return (
-        <div className="container my-[50px] py-[30px]">
+        <div className="container  py-[30px]">
             <h1 className="text-[32px] sm:text-[48px] md:text-[56px] font-bold text-white ">My Tech Stack //</h1>
             <h3 className="text-white text-[18px] sm:text-[24px]">
                 Technologies I’ve been working with recently
