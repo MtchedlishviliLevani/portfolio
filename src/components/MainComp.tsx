@@ -3,6 +3,7 @@ import Header from "./Header"
 import HomePage from "./HomePage"
 import About from "./About"
 import Projects from "./Projects"
+import Contact from "./Contact"
 function MainComp() {
     return (
         <motion.div
@@ -15,6 +16,7 @@ function MainComp() {
             <main>
                 <About />
                 <Projects />
+                <Contact />
             </main>
         </motion.div>
     )

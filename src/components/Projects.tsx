@@ -1,4 +1,3 @@
-import React from 'react'
 import dataJson from '../data/data.json'
 
 function Projects() {
@@ -38,7 +37,7 @@ function Projects() {
                                 </h2>
                                 <div className="flex gap-[20px] items-center mt-[10px] xl:mt-[20px] container justify-center">
                                     <button className="text-white text-[16px] sm:[18px] md:text-[24px]">See Live</button>
-                                    <img className="w-[40px] cursor-pointer" src="/icons_github-fill.png" alt="github-icon" />
+                                    <img className="w-[30px] md:w-[40px] cursor-pointer" src="/icons_github-fill.png" alt="github-icon" />
                                 </div></div>
                         </div>
                     })}
