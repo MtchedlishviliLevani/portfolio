@@ -76,3 +76,87 @@
 .card-shadow {
   box-shadow: 0 5px 12px 0 rgba(19, 19, 19, 0.15);
 }
+button.styling {
+  font-weight: 600;
+  color: #382b22;
+  padding: 0.75em 1.5em; /* Reduced padding for better fit on mobile */
+  background: rgb(255, 111, 97);
+  border: 2px solid #ff6f61; /* Adjusted to match the base color */
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+  position: relative; /* Added to fix position issue */
+}
+
+button.styling::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffd1cc; /* Light shade to complement base color */
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #ff6f61, 0 0.625em 0 0 #ff9985; /* Adjusted to match the base color */
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.styling:hover {
+  background: #ff9985; /* Adjusted hover background */
+  transform: translate(0, 0.25em);
+}
+
+button.styling:hover::before {
+  box-shadow: 0 0 0 2px #ff6f61, 0 0.5em 0 0 #ffd1cc; /* Adjusted to match the base color */
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+button.styling:active {
+  background: #ff9985; /* Adjusted active background */
+  transform: translate(0em, 0.75em);
+}
+
+button.styling:active::before {
+  box-shadow: 0 0 0 2px #ff6f61, 0 0 #ffd1cc; /* Adjusted to match the base color */
+  transform: translate3d(0, 0, -1em);
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 600px) {
+  button.styling {
+    padding: 0.5em 1em; /* Further reduce padding for smaller screens */
+    font-size: 0.875em; /* Adjust font size for better readability on smaller screens */
+  }
+
+  button.styling::before {
+    box-shadow: 0 0 0 1px #ff6f61, 0 0.3125em 0 0 #ff9985; /* Adjust shadow for smaller screens */
+    transform: translate3d(
+      0,
+      0.375em,
+      -0.5em
+    ); /* Adjust transform for smaller screens */
+  }
+
+  button.styling:hover::before {
+    box-shadow: 0 0 0 1px #ff6f61, 0 0.25em 0 0 #ffd1cc; /* Adjust shadow for smaller screens */
+    transform: translate3d(
+      0,
+      0.25em,
+      -0.5em
+    ); /* Adjust transform for smaller screens */
+  }
+
+  button.styling:active::before {
+    box-shadow: 0 0 0 1px #ff6f61, 0 0 #ffd1cc; /* Adjust shadow for smaller screens */
+    transform: translate3d(
+      0,
+      0,
+      -0.5em
+    ); /* Adjust transform for smaller screens */
+  }
+}

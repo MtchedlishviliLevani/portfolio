@@ -10,8 +10,8 @@ function Projects() {
                     <h2 className='text-[48px] text-white text-center '>Projects</h2>
                 </div>
                 <div className="grid lg:gap-[50px] gap-[20px] sm:justify-center sm:gap-[30px] xl:grid-cols-3 md:grid-cols-2 ">
-                    {dataJson.projects.map((item) => {
-                        return <div className="bg-[#2f114d78] sm:max-w-[400px] md:max-w-[initial]  rounded-lg  h-[100%] relative ">
+                    {dataJson.projects.map((item, i) => {
+                        return <div key={i} className="bg-[#2f114d78] sm:max-w-[400px] md:max-w-[initial]  rounded-lg  h-[100%] relative ">
                             <div className="relative group">
                                 <img
                                     className="rounded-t-lg cursor-pointer w-full h-[200px] "
