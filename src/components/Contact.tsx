@@ -1,24 +1,28 @@
-import emailjs from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { useRef } from 'react';
+import { RefObject } from 'react';
 
 function Contact() {
-    const form = useRef();
+    // Type the ref as RefObject<HTMLFormElement>
+    const form: RefObject<HTMLFormElement> = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = (e) => {
+    // Type the event parameter
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
 
-        emailjs
-            .sendForm('service_lbarcv5', 'template_y296mmk', form.current, 'keQTjMSI_OtRU0Fjq')
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                },
-            );
-
-        e.target.reset(); // Reset the form fields after submission
+        if (form.current) {
+            emailjs
+                .sendForm('service_lbarcv5', 'template_y296mmk', form.current, 'keQTjMSI_OtRU0Fjq')
+                .then(
+                    (result: EmailJSResponseStatus) => {
+                        console.log('SUCCESS!', result.text);
+                    },
+                    (error: Error) => {
+                        console.log('FAILED...', error.message);
+                    }
+                );
+            form.current.reset(); // Reset the form
+        }
     };
 
     return (
