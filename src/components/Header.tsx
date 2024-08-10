@@ -11,7 +11,7 @@ const Header = () => {
     const context = useContext(appStateContext);
 
     return (
-        <header className="flex py-[35px] justify-between items-center ">
+        <header className="flex py-[15px] md:py-[35px] justify-between items-center ">
             <img src={Logo} className="w-[80px]" />
             {/*only mobile */}
             <div
@@ -30,7 +30,7 @@ const Header = () => {
                         animate={{ left: "0" }}
                         transition={{ duration: 1.5 }}
                         exit={{ left: "-2500px", transition: { duration: 1.5 } }}
-                        className={` flex flex-col  fixed top-[130px] w-[100%] bg-[#16222e] md:bg-transparent h-[calc(100vh-122px)] md:h-[initial] md:min-w-[400px] md:w-[60%] md:left-[initial] md:static md:flex-row md:justify-between`}
+                        className={` flex flex-col  fixed top-[82px] w-[100%] bg-[#16222e] lg:bg-transparent md:bg-transparent h-[calc(100vh-81px)] md:h-[initial] md:min-w-[400px] md:w-[60%] md:left-[initial] md:static md:flex-row md:justify-between`}
                     >
                         {navigationList.map((value, i) => (
                             <li

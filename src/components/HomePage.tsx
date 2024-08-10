@@ -5,7 +5,7 @@ function HomePage() {
 
 
     return (
-        <section className="my-[40px]">
+        <section className="py-[40px]  md:mt-[40px]">
             <motion.h1
 
                 className="text-[28px] md:text-[32px] font-bold text-center md:text-left leading-[135%] text-white fade-in-left "
@@ -32,10 +32,7 @@ function HomePage() {
 
 
             <img className="scrollDownAnimation  w-[70px] translate-x-[-50%] absolute top-[80%] left-[50%] " src="/scrollDownIcon.svg" alt="" />
-            {/* <div className="flex justify-center md:justify-start items-center gap-5 md:gap-10">
-                    <img src="/LinkedIn-Blue.png" className="w-[100px] h-[35px]" alt="" />
-                    <img src="/github-mark-white.jpg" className="w-[60px] h-[55px]" alt="" />
-                </div> */}
+
         </section>
     );
 }
