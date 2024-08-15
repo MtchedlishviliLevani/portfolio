@@ -3,12 +3,17 @@ import Logo from "/logo1.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { appStateContext } from "../helper/createContext";
 
-const Header = () => {
+const Header = ({ isInnerWidthMore768 }: { isInnerWidthMore768: null | boolean }) => {
     const [listIndex, setListIndex] = useState<number>(0);
     const navigationList = ["Home", "About", "Projects", "Contact"];
-    console.log(listIndex)
+    const myContext = useContext(appStateContext)
 
     const context = useContext(appStateContext);
+
+    function handleNavigation(i: number) {
+        setListIndex(i)
+        if (!isInnerWidthMore768) myContext?.setIsHiddenNavigations(false)
+    }
 
     return (
         <header className="flex py-[15px] md:py-[35px] justify-between items-center ">
@@ -26,7 +31,7 @@ const Header = () => {
             <AnimatePresence>
                 {context?.isHiddenNavigation && (
                     <motion.ul
-                        initial={{ left: "2500px" }}
+                        initial={{ left: "-2500px" }}
                         animate={{ left: "0" }}
                         transition={{ duration: 1.5 }}
                         exit={{ left: "-2500px", transition: { duration: 1.5 } }}
@@ -35,7 +40,7 @@ const Header = () => {
                         {navigationList.map((value, i) => (
                             <li
                                 key={i}
-                                onClick={() => setListIndex(i)}
+                                onClick={() => handleNavigation(i)}
                                 className={`${listIndex === i
                                     ? "bg-[#c82727]  md:text-red-400 md:font-bold delay-75 md:delay-0 btn"
                                     : "border-solid border-b md:border-b-0  border-white md:border-transparent  "
@@ -45,7 +50,7 @@ const Header = () => {
                                     } 
                                     cursor-pointer  text-[24px] text-center md:text-left text-white p-[25px] md:p-0 md:py-[8px] md:items-center relative after:content-[''] after:absolute after:w-[100%] after:h-[1px] after:bg-white  after:left-[0%] after:opacity-0 hover:after:opacity-100 after:bottom-0 after:duration-[1s] after:transition-[opacity]`}
                             >
-                                {value}
+                                <a href={`#${value.toLowerCase()}`}>  {value}</a>
                             </li>
                         ))}
                     </motion.ul>

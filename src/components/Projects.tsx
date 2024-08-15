@@ -2,7 +2,7 @@ import dataJson from '../data/data.json'
 
 function Projects() {
     return (
-        <div style={{
+        <div id='projects' style={{
             background: 'linear-gradient(rgba(20, 106, 159, 0.68), rgb(135, 52, 52))'
         }} className='w-[100%] min-h-[100vh] h-[100%]'>
             <div className="container">

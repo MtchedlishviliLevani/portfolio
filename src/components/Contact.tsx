@@ -26,7 +26,7 @@ function Contact() {
     };
 
     return (
-        <section
+        <section id='contact'
             style={{ background: "linear-gradient(to bottom, #873434, #146a9fad)" }}
             className="w-full h-[100%]"
         >

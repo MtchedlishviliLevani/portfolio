@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 .btn {
   background-color: #c82727;
   animation: backgroundAppear 0.75s forwards;

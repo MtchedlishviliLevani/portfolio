@@ -9,9 +9,9 @@ function About() {
     const buttonList = ["General Information", "Education", "Tech Stack"]
     const [activeButtonIndex, setActiveButtonIndex] = useState(0)
     return (
-        <section
+        <section id="about"
             style={{ background: "linear-gradient(to bottom, #873434, #146a9fad)" }}
-            className="w-[100%] min-h-screen h-[100%] "
+            className="w-[100%]  h-[100%] pb-[200px] pt-[30px] md:pt-[70px]"
         ><div className="container">
                 <div className="flex justify-center ">
 

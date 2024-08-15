@@ -1,47 +1,66 @@
-import { motion } from "framer-motion"
-import Header from "./Header"
-import HomePage from "./HomePage"
-import About from "./About"
-import Projects from "./Projects"
-import Contact from "./Contact"
-import { useContext, useEffect, useState } from "react"
-import { appStateContext } from "../helper/createContext"
+import About from "./About";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import { useContext, useEffect, useState } from "react";
+import { appStateContext } from "../helper/createContext";
+import HomePage from "./HomePage";
+
 function MainComp() {
-    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<boolean | null>(null)
+    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<
+        boolean | null
+    >(null);
+    const myContext = useContext(appStateContext);
+
     useEffect(() => {
-        if (window.innerWidth > 768) {
-            setIsInnerWidthMore768(true)
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                setIsInnerWidthMore768(true);
+            } else {
+                setIsInnerWidthMore768(false);
+            }
+        };
 
-        } else {
-            setIsInnerWidthMore768(false)
-        }
-    }, [isInnerWidthMore768])
+        // Set initial state
+        handleResize();
 
-    console.log(isInnerWidthMore768)
-    const myContext = useContext(appStateContext)
+        // Add event listener for window resize
+        window.addEventListener("resize", handleResize);
 
-    // const condtition = isInnerWidthMore768 && !myContext?.isHiddenNavigation ? true : false
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Cleanup the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
-        <motion.div
-            initial={{ left: "101%" }} animate={{ left: 0 }} transition={{ delay: 0, duration: 1.3 }} className='w-[100%] h-[105vh]  absolute z-40 font-jura'
-            style={{ backgroundImage: "url(/home-cover.jpg)", backgroundSize: "cover" }}>
-            <div className=" min-h-[100vh]">
-                <div className="fixed md:static top-0 h-[82px] z-30 w-[100%] bg-blue-900 md:bg-transparent">
-                    <div className="container  "> <Header /></div>
-                </div>
-
-                {/* here is needed to determine condition in order to state can work */}
-                {<>  <div className="container  h-[calc(100vh-114px)] mt-[114px] md:mt-[0px] "><HomePage /></div>
-
-                    < main >
-                        <About />
-                        <Projects />
-                        <Contact />
-                    </main></>}
+        <>
+            <div>
+                <HomePage isInnerWidthMore768={isInnerWidthMore768} />
+                {(!myContext?.isHiddenNavigation || isInnerWidthMore768) && (
+                    <>
+                        <main>
+                            <About />
+                            <Projects />
+                            <Contact />
+                        </main>
+                    </>
+                )}
             </div>
-        </motion.div >
-    )
+        </>
+    );
 }
 
-export default MainComp
+export default MainComp;
