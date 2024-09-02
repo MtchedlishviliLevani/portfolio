@@ -32,18 +32,7 @@ function MainComp() {
         };
     }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            console.log(window.scrollY);
-        };
 
-        window.addEventListener("scroll", handleScroll);
-
-        // Cleanup the event listener when the component unmounts
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
 
     return (
         <>

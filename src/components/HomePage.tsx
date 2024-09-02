@@ -28,7 +28,7 @@ function HomePage({ isInnerWidthMore768 }: { isInnerWidthMore768: boolean | null
 
     const myContext = useContext(appStateContext)
     return (
-        <>
+        <section id='home'>
             <div
                 style={{ background: headerBg }}
                 className="fixed   top-0 h-[82px] md:h-[initial] z-50 w-[100%]  "
@@ -46,7 +46,7 @@ function HomePage({ isInnerWidthMore768 }: { isInnerWidthMore768: boolean | null
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 transition={{ delay: 0, duration: 1.3 }}
-                id="home"
+
                 className="w-[100%] h-[100vh]  relative top-0 z-40 font-jura"
                 style={{
                     backgroundImage: "url(/home-cover.jpg)",
@@ -71,7 +71,7 @@ function HomePage({ isInnerWidthMore768 }: { isInnerWidthMore768: boolean | null
                     </AnimatePresence>
                 </div>
             </motion.div>
-        </>
+        </section>
     )
 }
 

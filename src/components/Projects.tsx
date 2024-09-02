@@ -4,7 +4,7 @@ import { motion } from "framer-motion"; // Import Framer Motion for animations
 
 function Projects() {
     return (
-        <div
+        <section
             id="projects"
             style={{
                 background:
@@ -85,7 +85,7 @@ function Projects() {
                     SEE MORE
                 </a>
             </div>
-        </div>
+        </section>
     );
 }
 

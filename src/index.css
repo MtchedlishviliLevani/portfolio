@@ -15,7 +15,7 @@ html {
 }
 
 .btn {
-  background-color: #c82727;
+  background-color: blue;
   animation: backgroundAppear 0.75s forwards;
 }
 
@@ -28,12 +28,12 @@ html {
 
 @keyframes backgroundAppear {
   0% {
-    background: linear-gradient(to bottom, transparent 0%, #c82727 100%);
+    background: linear-gradient(to bottom, transparent 0%, blue 100%);
     background-size: 100% 200%;
     background-position: top;
   }
   100% {
-    background: linear-gradient(to bottom, transparent 0%, #c82727 100%);
+    background: linear-gradient(to bottom, transparent 0%, blue 100%);
     background-size: 100% 200%;
     background-position: bottom;
   }
@@ -177,3 +177,8 @@ button.styling:active::before {
     transform: translateY(20px);
   }
 }
+
+/* {`${listIndex === i
+  ? "bg-[#c82727]  md:text-red-400 md:font-bold delay-75 md:delay-0 btn"
+  : "border-solid border-b md:border-b-0  border-white md:border-transparent  "
+  } */

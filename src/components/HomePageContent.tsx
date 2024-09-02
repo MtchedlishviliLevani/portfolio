@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function HomePageContent() {
 
     return (
-        <section className="py-[40px]  md:mt-[40px]">
+        <div className="py-[40px]  md:mt-[40px]">
             <motion.h1
 
                 className="text-[28px] md:text-[32px] font-bold text-center md:text-left leading-[135%] text-white fade-in-left "
@@ -30,7 +30,7 @@ function HomePageContent() {
 
             <img className="scrollDownAnimation hidden md:inline-block  w-[70px] translate-x-[-50%] absolute top-[560px] left-[50%] " src="/scrollDownIcon.svg" alt="" />
 
-        </section>
+        </div>
     );
 }
 
