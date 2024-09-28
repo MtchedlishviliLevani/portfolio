@@ -10,20 +10,15 @@ export default function TechSkills() {
     { logo: "/ts-logo.png", backgroundColor: "rgb(0 0 0 / 0.1)" },
     { logo: "/next-js.svg", backgroundColor: "rgb(0 0 0 / 0.1)" },
 
-
-
-
-
-
     ];
     return (
         <div className="container  py-[30px]">
-            <h1 className="text-[32px] sm:text-[48px] md:text-[56px] font-bold text-white ">My Tech Stack //</h1>
-            <h3 className="text-white text-[18px] sm:text-[24px]">
+            <h1 className="text-[20px] sm:text-[48px] md:text-[56px] font-bold text-white ">My Tech Stack //</h1>
+            <h3 className="text-white text-[14px] sm:text-[24px]">
                 Technologies I’ve been working with recently
             </h3>
             <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9  gap-2 lg:gap-3 my-[40px]">
-                {techStackContent.map((item, i) => <div key={i} style={{ background: item.backgroundColor }} className="p-[10px] md:p-[20px]  grid place-items-center"> <img className="w-[70px] md:w-[120px]" src={item.logo} /></div>)}
+                {techStackContent.map((item, i) => <div key={i} style={{ background: item.backgroundColor }} className="p-[10px] md:p-[20px]  grid place-items-center"> <img loading="lazy" className="w-[70px] md:w-[120px] " src={item.logo} /></div>)}
             </div>
         </div >
     );

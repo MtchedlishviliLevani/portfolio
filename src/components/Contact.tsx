@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, forwardRef } from 'react';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-function Contact() {
+const Contact = forwardRef((_, ref) => {
     const form = useRef<HTMLFormElement>(null);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -23,19 +23,21 @@ function Contact() {
         }
     };
 
-    const { ref, inView } = useInView({
+    const { inView, ref: inViewRef } = useInView({
         triggerOnce: true,
         threshold: 0.3
     });
 
+    // Use ref passed from the parent and the inView ref to manage visibility.
     return (
         <motion.section
             id="contact"
+            ref={ref} // Attach the ref here
             style={{ background: "linear-gradient(to bottom, #873434, #146a9fad)" }}
-            className="w-full h-full "
+            className="w-full h-full"
         >
             <motion.div
-                ref={ref}
+                ref={inViewRef} // Attach inView ref to track visibility
                 initial={{ opacity: 0, y: 50 }} // Start slightly below and transparent
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} // Slide up into view and fade in
                 transition={{ duration: 0.6, ease: 'easeOut' }} // Smooth the transition
@@ -53,7 +55,7 @@ function Contact() {
                     <div className="mt-[35px]">
                         <h3 className="text-[30px] md:text-[36px] font-bold text-[#fff]">Contact Me</h3>
                         <div className="flex gap-[15px] items-center mt-[10px] md:mt-[15px]">
-                            <img src="gmail-icon-logo-svgrepo-com.svg" alt="Gmail icon" />
+                            <img loading="lazy" src="gmail-icon-logo-svgrepo-com.svg" alt="Gmail icon" />
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22" width="40" height="40" fill="#0e76a8">
                                 <path d="M5.3 22H.6V7h4.7v15zM2.8 5.2C1.1 5.2 0 4 0 2.6 0 1.1 1.1 0 2.9 0s2.8 1.1 2.8 2.6c0 1.4-1.1 2.6-2.9 2.6zM24 22h-5.3v-7.7c0-2-.8-3.4-2.7-3.4-1.4 0-2.2.9-2.5 1.8-.1.3-.1.8-.1 1.2V22H8.1s.1-13.7 0-15h5.2v2.3c.3-1 2-2.5 4.7-2.5 3.3 0 5.9 2.2 5.9 6.8L24 22z"></path>
                             </svg>
@@ -95,6 +97,6 @@ function Contact() {
             </motion.div>
         </motion.section>
     );
-}
+});
 
 export default Contact;

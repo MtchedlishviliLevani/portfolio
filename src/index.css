@@ -14,15 +14,29 @@ html {
   scroll-behavior: smooth;
 }
 
-.btn {
+/* .btn {
   background-color: blue;
   animation: backgroundAppear 0.75s forwards;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .btn {
     background-color: transparent;
     animation: initial;
+  }
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .arrow {
+    animation: moveLeft 1s linear;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -39,17 +53,6 @@ html {
   }
 }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes moveLeft {
   0% {
     transform: translateX(0);
@@ -59,14 +62,19 @@ html {
   }
 }
 
-.arrow {
-  animation: moveLeft 1s linear;
-  animation-iteration-count: infinite;
-}
-
-.fade-in-left {
+/* .fade-in-left {
   animation: fadeInLeft 2s linear;
   animation-delay: 5s;
+} */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+a {
+  font-display: swap;
 }
 
 @keyframes scrollDown {

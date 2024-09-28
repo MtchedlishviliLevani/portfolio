@@ -10,6 +10,7 @@
   },
   "projects": [
     {
+      "id": "1",
       "title": "Audiophile Ecommerce Page",
       "imageSrc": "/audiophile-ecommerce-website.png",
       "description": "A productivity management tool.",
@@ -17,15 +18,19 @@
         "/tailwindIcon.png",
         "/logos_react.png",
         "/framer-motion-logo.png"
-      ]
+      ],
+      "link": "https://audiophile-ecommerce-page-l6c21.vercel.app/"
     },
     {
+      "id": "2",
+      "link": "https://entertainment-web-app-ten-mu.vercel.app/auth",
       "title": "Entertainment-Web-App ",
       "imageSrc": "/entertainment-web-app.png",
       "description": "An online shopping platform.",
       "techIcons": ["/tailwindIcon.png", "/logos_react.png"]
     },
     {
+      "id": "3",
       "title": "Dev-Jobs Web App",
       "imageSrc": "/devjobs.png",
       "description": "A social networking application.",
@@ -36,6 +41,7 @@
       ]
     },
     {
+      "id": "4",
       "title": "Kanban Managment Web App",
       "imageSrc": "/task-management-website.png",
       "description": "A social networking application.",
@@ -46,6 +52,7 @@
       ]
     },
     {
+      "id": "5",
       "title": "Password Generator",
       "imageSrc": "/password-generator.png",
       "description": "A social networking application.",
@@ -56,6 +63,7 @@
       ]
     },
     {
+      "id": "6",
       "title": "Planets Web Page",
       "imageSrc": "/planet-fact-site.png",
       "description": "A social networking application.",

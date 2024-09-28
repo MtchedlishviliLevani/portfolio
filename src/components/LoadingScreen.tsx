@@ -1,4 +1,4 @@
-import BgImage from '/Frame 3.png'
+import BgImage from "../assets/Frame 3.png"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function LoadingScreen({ isOpenScreenLoad }: { isOpenScreenLoad: boolean }) {
@@ -6,14 +6,15 @@ export default function LoadingScreen({ isOpenScreenLoad }: { isOpenScreenLoad: 
         <AnimatePresence>
             {isOpenScreenLoad &&
                 <motion.div
-                    initial={{ y: -1500 }}
+                    initial={{ y: "-100%" }}
                     animate={{ y: 0 }}
-                    transition={{ duration: .5 }}
-                    exit={{ y: 1500, transition: { duration: 1 } }}
+                    transition={{ duration: .5, }}
+                    exit={{ y: "100%", transition: { duration: 0.3 } }}
 
                     className='w-full h-screen bg-loadedScreenBgColor flex justify-center items-center  '
                 >
-                    <motion.img initial={{ y: -1500 }} animate={{ y: 0 }} transition={{ duration: 1 }} src={BgImage} className='w-[300px] ' alt="" />
+                    <motion.img exit={{ y: "100%", transition: { duration: 0.3 } }}
+                        initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} src={BgImage} className='w-[300px] ' alt="loading-screen-image" />
 
                 </motion.div>}
         </AnimatePresence>

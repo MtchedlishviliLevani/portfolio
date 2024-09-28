@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useContext, useEffect, useState } from 'react'
 import LoadingScreen from './components/LoadingScreen'
 import MainComp from './components/MainComp'
+import { appStateContext } from './helper/createContext'
 
 function App() {
   const [isOpenScreenLoad, setIsOpenScreenLoad] = useState(true)
@@ -10,12 +10,13 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpenScreenLoad(false);
-    }, 1500); // 3 seconds to show the div initially
-    return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
+  const myContex = useContext(appStateContext)
   return (
     <>
-      {isOpenScreenLoad ? <LoadingScreen isOpenScreenLoad={isOpenScreenLoad} /> : <MainComp />
+      {isOpenScreenLoad && myContex?.isInnerWidthMore768 === true ? <LoadingScreen isOpenScreenLoad={isOpenScreenLoad} /> : <MainComp />
       }
     </>
   )

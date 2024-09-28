@@ -1,53 +1,82 @@
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import { useContext, useEffect, useState } from "react";
-import { appStateContext } from "../helper/createContext";
 import HomePage from "./HomePage";
+import { useContext, useEffect, useRef, useState } from "react";
+import { appStateContext } from "../helper/createContext";
+import { motion } from "framer-motion";
 
 function MainComp() {
-    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<
-        boolean | null
-    >(null);
     const myContext = useContext(appStateContext);
 
+    const variants = {
+        hidden: { x: "100%", opacity: 0 },
+        visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+        exit: { x: "100%", opacity: 0, transition: { duration: 0.5 } },
+    };
+
+
+    // Create refs for each section
+    const homeRef = useRef(null)
+    const aboutRef = useRef(null);
+    const projectsRef = useRef(null);
+    const contactRef = useRef(null);
+
+    const [activeSection, setActiveSection] = useState("home")
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth > 768) {
-                setIsInnerWidthMore768(true);
-            } else {
-                setIsInnerWidthMore768(false);
-            }
-        };
+        const sectionRefs = [homeRef, aboutRef, projectsRef, contactRef]
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.1 } // Adjust threshold for sensitivity
+        );
 
-        // Set initial state
-        handleResize();
+        sectionRefs.forEach((ref) => {
+            if (ref.current) observer.observe(ref.current);
+        });
 
-        // Add event listener for window resize
-        window.addEventListener("resize", handleResize);
-
-        // Clean up event listener on component unmount
         return () => {
-            window.removeEventListener("resize", handleResize);
+            sectionRefs.forEach((ref) => {
+                if (ref.current) observer.unobserve(ref.current);
+            });
         };
-    }, []);
-
-
+    }, [])
 
     return (
         <>
-            <div>
-                <HomePage isInnerWidthMore768={isInnerWidthMore768} />
-                {(!myContext?.isHiddenNavigation || isInnerWidthMore768) && (
-                    <>
-                        <main>
-                            <About />
-                            <Projects />
-                            <Contact />
-                        </main>
-                    </>
-                )}
-            </div>
+            {myContext?.isInnerWidthMore768 ? (
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={variants}
+                >
+                    <HomePage ref={homeRef} activeSection={activeSection} />
+
+                    <main>
+                        <About ref={aboutRef} />
+                        <Projects ref={projectsRef} />
+                        <Contact ref={contactRef} />
+                    </main>
+
+                </motion.div>
+            ) : (
+                <div>
+                    <HomePage ref={homeRef} activeSection={activeSection} />
+
+                    <main>
+                        <About ref={aboutRef} />
+                        <Projects ref={projectsRef} />
+                        <Contact ref={contactRef} />
+                    </main>
+
+                </div>
+            )}
         </>
     );
 }

@@ -3,26 +3,28 @@ import { appStateContext } from "../helper/createContext"
 
 
 function Context({ children }: { children: ReactNode }) {
-    const [isHiddenNavigation, setIsHiddenNavigations] = useState(window.innerWidth > 767)
+    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<boolean | null>(window.innerWidth > 767)
+    const [isOpenNavigation, setIsOpenNavigation] = useState<boolean>(false)
+
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 767) {
-                setIsHiddenNavigations(true)
+                setIsInnerWidthMore768(true)
             } else {
-                setIsHiddenNavigations(false)
+                setIsInnerWidthMore768(false)
             }
         }
         handleResize()
         window.addEventListener("resize", handleResize)
         return () => {
-            removeEventListener("resize", handleResize)
+            window.removeEventListener("resize", handleResize)
         }
     }, [])
 
 
     return (
-        <appStateContext.Provider value={{ isHiddenNavigation, setIsHiddenNavigations }}>
+        <appStateContext.Provider value={{ isInnerWidthMore768, setIsInnerWidthMore768, isOpenNavigation, setIsOpenNavigation }}>
             {children}
         </appStateContext.Provider>
     )

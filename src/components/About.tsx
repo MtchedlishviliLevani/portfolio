@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 import { motion } from "framer-motion";
 import GeneralInfoAboutMe from "./GeneralInfoAboutMe";
 import Education from "./Education";
 import TechSkills from "./TechSkills";
 import { useInView } from 'react-intersection-observer';
 
-function About() {
+// Define the type for the ref
+type AboutProps = React.HTMLProps<HTMLDivElement>;
+
+const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
     const buttonList = ["General Information", "Education", "Tech Stack"];
     const [activeButtonIndex, setActiveButtonIndex] = useState(0);
 
+    const handleActiveButton = useCallback((i: number) => {
+        setActiveButtonIndex(i);
+    }, []);
+
+
     // Intersection Observer hook for scroll-triggered animations
-    const [ref, inView] = useInView({
+    const [inViewRef, inView] = useInView({
         triggerOnce: true, // Trigger animation only once
         threshold: 0.3, // Trigger when 30% of the component is in view
     });
@@ -20,8 +28,20 @@ function About() {
         visible: { opacity: 1, y: 0 }
     };
 
+    // handle ref
+    const handleRef = (node: HTMLElement | null) => {
+        inViewRef(node); // Attach inViewRef to the node
+        if (ref) {
+            if (typeof ref === "function") {
+                ref(node); // Call function ref
+            } else {
+                ref.current = node; // Assign to object ref
+            }
+        }
+    };
+
     return (
-        <section id="about"
+        <section id="about" ref={ref}
             style={{ background: "linear-gradient(to bottom, #873434, #146a9fad)" }}
             className="w-[100%] h-[100%] pb-[200px] pt-[30px] md:pt-[70px]"
         >
@@ -33,9 +53,9 @@ function About() {
                     >
                         {buttonList.map((item, i) => (
                             <button
-                                className={`${activeButtonIndex === i && "underline underline-offset-4"}`}
+                                className={`${activeButtonIndex === i && "underline underline-offset-4"} text-[12px] md:text-[16px]`}
                                 key={i}
-                                onClick={() => setActiveButtonIndex(i)}
+                                onClick={() => handleActiveButton(i)}
                             >
                                 {item}
                             </button>
@@ -44,13 +64,12 @@ function About() {
                 </div>
             </div>
 
-            {/* Scroll-triggered vertical animation */}
             <motion.div
-                ref={ref}
+                ref={handleRef}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={animationVariants}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
             >
                 {activeButtonIndex === 0 ? (
                     <GeneralInfoAboutMe />
@@ -62,6 +81,6 @@ function About() {
             </motion.div>
         </section>
     );
-}
+})
 
 export default About;
