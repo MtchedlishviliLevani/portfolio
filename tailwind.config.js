@@ -15,29 +15,15 @@ export default {
       },
       screens: {
         sm: "480px",
+        xsm: "600px",
         md: "768px",
         lg: "920px",
         xl: "1280px",
+        "2xl": "1480px",
       },
       container: {
         center: true,
-        screens: {
-          sm: "100%",
-          "2xl": "1200px",
-        },
-        padding: {
-          DEFAULT: "5%",
-          sm: "5%",
-          md: "5%",
-          lg: "5%",
-          xl: "2.5%",
-          "2xl": "0",
-        },
-      },
-      maxWidth: {
-        DEFAULT: "100%",
-        sm: "100%",
-        md: "100%",
+        padding: "2.5%",
       },
     },
   },

@@ -2,26 +2,26 @@ import { useContext } from "react";
 import Logo from "/logo1.png";
 import { appStateContext } from "../helper/createContext";
 import { Link } from "react-scroll"
-// import { throttle } from "lodash"
+import data from "../data/data.json"
+import { HeaderProps } from "../types";
 
-const Header = ({ activeSection }: { activeSection: string }) => {
-
-    const navigationList = ["Home", "About", "Projects", "Contact"];
+const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
 
     const context = useContext(appStateContext);
 
     function handleClickNavigationBar() {
         context?.setIsOpenNavigation(toggle => !toggle)
-        console.log(context?.isOpenNavigation)
     }
+    console.log(activeSection)
 
-    function handleNavigation() {
+    function handleNavigation(activeSection: string) {
         if (!context?.isInnerWidthMore768) {
             context?.setIsOpenNavigation(false)
         }
+        setActiveSection(activeSection)
+
     }
     return (
-        // need add to bg not tranpsarent
         <header className="flex py-[15px] md:py-[35px] justify-between items-center">
             <img src={Logo} className="w-[60px] md:w-[80px]" alt="Logo" loading="lazy" />
             {/* only mobile */}
@@ -36,13 +36,14 @@ const Header = ({ activeSection }: { activeSection: string }) => {
             <ul
                 className={`${context?.isOpenNavigation === false ? "left-[100%]" : "left-[0]"} flex flex-col fixed top-[82px] w-[100%] bg-[#16222e] lg:bg-transparent md:bg-transparent h-[calc(100vh-81px)] md:h-[initial] md:min-w-[400px] md:w-[60%] md:left-[initial] md:static md:flex-row md:justify-between`}
             >
-                {navigationList.map((value, i) => (
+                {data.home.navigation.map((value, i) => (
                     <Link
                         to={value.toLowerCase()}
                         smooth={true}
-                        duration={100}
+                        duration={400}
                         key={i}
-                        onClick={handleNavigation}
+                        onClick={() => handleNavigation(value.toLocaleLowerCase())
+                        }
                         className={`${activeSection === value.toLowerCase()
                             ? "bg-[#c82727] md:text-red-400 md:font-bold  md:delay-0 btn "
                             : "border-solid border-b md:border-b-0 border-white md:border-transparent"

@@ -24,4 +24,19 @@ export const learningExperiences = [
     program: "Front-End Course (Javascript, React, Tailwind, Next.js)",
     dates: "21/02/2024 - 15/05/2024",
   },
+  {
+    organization: "Tbilisi School of Communication, Tbilisi, Georgia",
+    program: "Python/Django",
+    dates: "10/09/2024 - 25/12/2024",
+  },
+  {
+    organization: "Tbilisi School of Communication, Tbilisi, Georgia",
+    program: "Python/Django",
+    dates: "10/09/2024 - 25/12/2024",
+  },
+  {
+    organization: "New Horizons, Online",
+    program: "Front-End Programming with React",
+    dates: "12/10/2024 - 12/01/2025",
+  },
 ];

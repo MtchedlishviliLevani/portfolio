@@ -2,82 +2,43 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import HomePage from "./HomePage";
-import { useContext, useEffect, useRef, useState } from "react";
-import { appStateContext } from "../helper/createContext";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 function MainComp() {
-    const myContext = useContext(appStateContext);
+    const [activeSection, setActiveSection] = useState("home");
 
-    const variants = {
-        hidden: { x: "100%", opacity: 0 },
-        visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
-        exit: { x: "100%", opacity: 0, transition: { duration: 0.5 } },
-    };
+    // Hooks for each section
+    const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.1 });
+    const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.1 });
+    const { ref: projectsRef, inView: projectsInView } = useInView({ threshold: 0.1 });
+    const { ref: contactRef, inView: contactInView } = useInView({ threshold: 0.1 });
 
-
-    // Create refs for each section
-    const homeRef = useRef(null)
-    const aboutRef = useRef(null);
-    const projectsRef = useRef(null);
-    const contactRef = useRef(null);
-
-    const [activeSection, setActiveSection] = useState("home")
+    // Update active section when inView changes
     useEffect(() => {
-        const sectionRefs = [homeRef, aboutRef, projectsRef, contactRef]
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.1 } // Adjust threshold for sensitivity
-        );
-
-        sectionRefs.forEach((ref) => {
-            if (ref.current) observer.observe(ref.current);
-        });
-
-        return () => {
-            sectionRefs.forEach((ref) => {
-                if (ref.current) observer.unobserve(ref.current);
-            });
-        };
-    }, [])
+        if (contactInView) setActiveSection("contact");
+        else if (projectsInView) setActiveSection("projects");
+        else if (aboutInView) setActiveSection("about");
+        else if (homeInView) setActiveSection("home");
+    }, [homeInView, aboutInView, projectsInView, contactInView]);
 
     return (
-        <>
-            {myContext?.isInnerWidthMore768 ? (
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={variants}
-                >
-                    <HomePage ref={homeRef} activeSection={activeSection} />
+        <div className="">
 
-                    <main>
-                        <About ref={aboutRef} />
-                        <Projects ref={projectsRef} />
-                        <Contact ref={contactRef} />
-                    </main>
+            <div>
+                <HomePage
+                    ref={homeRef}
+                    activeSection={activeSection}
+                    setActiveSection={setActiveSection}
+                />
 
-                </motion.div>
-            ) : (
-                <div>
-                    <HomePage ref={homeRef} activeSection={activeSection} />
-
-                    <main>
-                        <About ref={aboutRef} />
-                        <Projects ref={projectsRef} />
-                        <Contact ref={contactRef} />
-                    </main>
-
-                </div>
-            )}
-        </>
+                <main>
+                    <About ref={aboutRef} />
+                    <Projects ref={projectsRef} />
+                    <Contact ref={contactRef} />
+                </main>
+            </div>
+        </div>
     );
 }
 

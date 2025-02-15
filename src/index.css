@@ -9,10 +9,10 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
+} */
 
 /* .btn {
   background-color: blue;
@@ -190,3 +190,17 @@ button.styling:active::before {
   ? "bg-[#c82727]  md:text-red-400 md:font-bold delay-75 md:delay-0 btn"
   : "border-solid border-b md:border-b-0  border-white md:border-transparent  "
   } */
+
+.container {
+  max-width: 1480px;
+  width: 95%;
+  margin: auto;
+}
+
+/* * {
+  overflow: hidden;
+} */
+
+.scroll {
+  overflow: hidden;
+}

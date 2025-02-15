@@ -19,7 +19,7 @@ const Projects = forwardRef<HTMLElement>((_, ref) => {
                 <div className="py-[30px]">
                     <h2 className="text-[24px] md:text-[32px] text-white text-center ">Projects</h2>
                 </div>
-                <div className="grid lg:gap-[50px] gap-[20px] sm:justify-center sm:gap-[30px] xl:grid-cols-3 md:grid-cols-2 ">
+                <div className="grid xsm:grid-cols-2 lg:gap-[50px] gap-[20px] sm:justify-center sm:gap-[30px] xl:grid-cols-3 md:grid-cols-2 ">
                     {dataJson.projects.map((item,) => (
                         <div key={item.id}>
                             <ProjectCard item={item} /></div>

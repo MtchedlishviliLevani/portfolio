@@ -1,23 +1,35 @@
 
-import { useContext, useEffect, useState } from 'react'
-import LoadingScreen from './components/LoadingScreen'
+import { useContext, useEffect } from 'react'
+// import LoadingScreen from './components/LoadingScreen'
 import MainComp from './components/MainComp'
 import { appStateContext } from './helper/createContext'
 
 function App() {
-  const [isOpenScreenLoad, setIsOpenScreenLoad] = useState(true)
+  const myContext = useContext(appStateContext)
+  // const isLargeScreen = !!myContext?.isInnerWidthMore768
+  useEffect(() => {
+    if (myContext?.isOpenNavigation) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      // Cleanup only when the component unmounts
+      document.body.style.overflow = "";
+    };
+  }, [myContext?.isOpenNavigation])
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpenScreenLoad(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-  const myContex = useContext(appStateContext)
+
+  }, [])
   return (
     <>
-      {isOpenScreenLoad && myContex?.isInnerWidthMore768 === true ? <LoadingScreen isOpenScreenLoad={isOpenScreenLoad} /> : <MainComp />
-      }
+      {/* <div className="app-container">
+        {isLargeScreen && <LoadingScreen />}
+      </div> */}
+      <MainComp />
+
     </>
   )
 }

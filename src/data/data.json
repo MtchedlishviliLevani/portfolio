@@ -1,12 +1,9 @@
 {
-  "header": {
-    "title": "My Portfolio",
-    "navigation": ["Home", "About", "Projects", "Contact"]
-  },
-  "heroSection": {
-    "title": "Welcome to My Portfolio",
-    "subtitle": "Front-End Developer | React.js Enthusiast",
-    "backgroundImage": "/hero-background.jpg"
+  "home": {
+    "navigation": ["Home", "About", "Projects", "Contact"],
+    "role": "Front-End Developer",
+    "introduction": "👋 Hey, I’m Levan Mtchedlishvili",
+    "experience": "2 years of React experience, focused on building creative and effective web applications"
   },
   "projects": [
     {
@@ -75,8 +72,74 @@
     }
   ],
   "about": {
-    "title": "About Me",
-    "content": "I am a front-end developer with a passion for creating dynamic and responsive web applications using React.js and Tailwind CSS."
+    "title": "About Me //",
+    "aboutText": "I'm Levan, a 24-year-old self-taught front-end developer. Currently, I'm mastering <b>React.js</b> to create dynamic and responsive user interfaces. I also have experience with <b>Next.js</b> for server-side rendering, and I have started learning backend development with <b>Express.js</b> a few months ago. While my primary focus remains on front-end development, I'm eager to further explore backend development and eventually become a full-stack developer. The challenges of front-end development are both motivating and rewarding for me.",
+    "learningExperience": [
+      {
+        "organization": "ILIA STATE UNIVERSITY, Tbilisi, Georgia",
+        "program": "Bachelor of Business Administration",
+        "dates": "2018-2022"
+      },
+      {
+        "organization": "SCSA, Tbilisi, Georgia",
+        "program": "Front-End Course (HTML, CSS, JavaScript)",
+        "dates": "09/09/2022 - 09/12/2022"
+      },
+      {
+        "organization": "Unilab, Tbilisi, Georgia",
+        "program": "Front-End Course (HTML, CSS, JavaScript)",
+        "dates": "21/01/2023 - 15/04/2023"
+      },
+      {
+        "organization": "Academy Of Digital Industry, Tbilisi, Georgia",
+        "program": "JavaScript Course",
+        "dates": "15/05/2023 - 15/07/2023"
+      },
+      {
+        "organization": "BitCamp, Tbilisi, Georgia",
+        "program": "Front-End Course (Javascript, React, Next.js)",
+        "dates": "21/02/2024 - 15/05/2024"
+      },
+      {
+        "organization": "Tbilisi School of Communication, Tbilisi, Georgia",
+        "program": "Python/Django",
+        "dates": "10/09/2024 - 25/12/2024"
+      },
+      {
+        "organization": "Tbilisi School of Communication, Tbilisi, Georgia",
+        "program": "Python/Django",
+        "dates": "10/09/2024 - 25/12/2024"
+      },
+      {
+        "organization": "New Horizons, Online",
+        "program": "Front-End Programming with React",
+        "dates": "12/10/2024 - 12/01/2025"
+      }
+    ],
+    "techStack": [
+      [
+        { "logo": "/htmlIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+
+        { "logo": "/cssIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+        {
+          "logo": "/javascriptIcon.png",
+          "backgroundColor": "rgb(0 0 0 / 0.1)"
+        },
+        { "logo": "/logos_react.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+        { "logo": "/tailwindIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+        {
+          "logo": "/logos_git-icon.png",
+          "backgroundColor": "rgb(0 0 0 / 0.1)"
+        },
+        {
+          "logo": "/icons_github-fill.png",
+          "backgroundColor": "rgb(0 0 0 / 0.1)"
+        },
+        { "logo": "/ts-logo.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+        { "logo": "/next-js.svg", "backgroundColor": "rgb(0 0 0 / 0.1)" }
+      ]
+    ],
+    "buttonList": ["General Information", "Education", "Tech Stack"]
   },
   "contact": {
     "title": "Contact Me",

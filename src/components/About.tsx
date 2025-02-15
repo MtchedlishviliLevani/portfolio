@@ -4,12 +4,11 @@ import GeneralInfoAboutMe from "./GeneralInfoAboutMe";
 import Education from "./Education";
 import TechSkills from "./TechSkills";
 import { useInView } from 'react-intersection-observer';
+import data from "../data/data.json"
 
 // Define the type for the ref
 type AboutProps = React.HTMLProps<HTMLDivElement>;
-
 const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
-    const buttonList = ["General Information", "Education", "Tech Stack"];
     const [activeButtonIndex, setActiveButtonIndex] = useState(0);
 
     const handleActiveButton = useCallback((i: number) => {
@@ -46,39 +45,41 @@ const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
             className="w-[100%] h-[100%] pb-[200px] pt-[30px] md:pt-[70px]"
         >
             <div className="container">
-                <div className="flex justify-center">
-                    <div
-                        style={{ background: "rgb(0 0 0 / 0.1)" }}
-                        className="bg-opacity-10 mt-[50px] *:text-white px-[10px] flex-col sm:flex-row w-[100%] gap-5 rounded-[8px] sm:px-[20px] py-[20px] flex sm:gap-7 items-center max-w-[500px] justify-center"
-                    >
-                        {buttonList.map((item, i) => (
-                            <button
-                                className={`${activeButtonIndex === i && "underline underline-offset-4"} text-[12px] md:text-[16px]`}
-                                key={i}
-                                onClick={() => handleActiveButton(i)}
-                            >
-                                {item}
-                            </button>
-                        ))}
+                <div className="">
+                    <div className="flex justify-center">
+                        <div
+                            style={{ background: "rgb(0 0 0 / 0.1)" }}
+                            className="bg-opacity-10 mt-[50px] *:text-white px-[10px] flex-col sm:flex-row w-[100%] gap-5 rounded-[8px] sm:px-[20px] py-[20px] flex sm:gap-7 items-center max-w-[500px] justify-center"
+                        >
+                            {data.about.buttonList.map((item, i) => (
+                                <button
+                                    className={`${activeButtonIndex === i && "underline underline-offset-4"} text-[12px] md:text-[16px]`}
+                                    key={i}
+                                    onClick={() => handleActiveButton(i)}
+                                >
+                                    {item}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <motion.div
-                ref={handleRef}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={animationVariants}
-                transition={{ duration: 0.3 }}
-            >
-                {activeButtonIndex === 0 ? (
-                    <GeneralInfoAboutMe />
-                ) : activeButtonIndex === 1 ? (
-                    <Education />
-                ) : (
-                    <TechSkills />
-                )}
-            </motion.div>
+                <motion.div
+                    ref={handleRef}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={animationVariants}
+                    transition={{ duration: 0.3 }}
+                >
+                    {activeButtonIndex === 0 ? (
+                        <GeneralInfoAboutMe />
+                    ) : activeButtonIndex === 1 ? (
+                        <Education />
+                    ) : (
+                        <TechSkills />
+                    )}
+                </motion.div>
+            </div>
         </section>
     );
 })

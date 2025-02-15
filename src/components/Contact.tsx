@@ -41,8 +41,9 @@ const Contact = forwardRef((_, ref) => {
                 initial={{ opacity: 0, y: 50 }} // Start slightly below and transparent
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} // Slide up into view and fade in
                 transition={{ duration: 0.6, ease: 'easeOut' }} // Smooth the transition
+
             >
-                <div className="pt-[70px] container pb-[70px]">
+                <div className="pt-[70px]  pb-[70px] container">
                     <div className="text-[#ffffff]">
                         <h2 className="font-bold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[36px]">
                             Let’s work together

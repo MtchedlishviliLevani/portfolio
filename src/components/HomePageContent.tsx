@@ -1,20 +1,52 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import data from "../data/data.json"
 
 function HomePageContent() {
-
+    const [h1Finished, setH1Finished] = useState(false);
+    const ref = useRef(null);
+    const ref2 = useRef(null)
+    const isInView = useInView(ref, { once: true });
     return (
         <div className="py-[40px]  md:mt-[40px]">
             <h1
-
+                ref={ref}
                 className="text-[20px] md:text-[32px] font-bold text-center md:text-left leading-[135%] text-white "
             >
-                👋 Hey, I’m Levan Mtchedlishvili
+                {data.home.introduction.split('').map((letter, index) => (
+                    <motion.span
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={isInView ? { opacity: 1 } : {}}
+                        transition={{ duration: 0.1, delay: index * 0.1 }}
+                        onAnimationComplete={() => {
+                            if (index === data.home.introduction.length - 1) {
+                                setH1Finished(true); // Trigger H2 animation after last letter
+                            }
+                        }}
+                    >
+                        {letter}
+                    </motion.span>
+                ))}
+
             </h1>
-            <h2 className="text-[18px] md:text-[32px] font-bold text-center md:text-left  leading-[135%] text-[#FF6F61] my-[10px] md:my-[25px]">
-                Front-End Developer
+            <h2 ref={ref2} className="text-[18px] md:text-[32px] font-bold text-center md:text-left  leading-[135%] text-[#FF6F61] my-[10px] md:my-[25px]">
+
+                {data.home.role.split('').map((letter, index) => (
+                    <motion.span
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={h1Finished ? { opacity: 1 } : {}}
+                        transition={{ duration: 0.1, delay: index * 0.1 }}
+                    >
+                        {letter}
+                    </motion.span>
+                ))}
             </h2>
             <div>
                 <p className="text-white text-center text-[12px] md:text-[20px] md:text-left md:max-w-[700px]">
-                    Hello, I'm a self-taught front-end developer specializing in React, with 2 years of experience. I am passionate about creating innovative web solutions and eager to bring your ideas to life.
+                    {data.home.experience}
                 </p>
                 <div className="my-[10px] flex gap-3 items-center">
                     <p className="text-white text-center text-[14px] md:text-[20px] my-[10px] md:text-left underline leading-5 underline-offset-4 cursor-pointer">See more about me</p><img className="arrow md:hidden translate-y-1 mt-[7px]" src="/arrow.svg" alt="" />
@@ -25,7 +57,6 @@ function HomePageContent() {
                     Download CV
                 </button>
             </div>
-            <img className="scrollDownAnimation hidden md:inline-block  w-[70px] translate-x-[-50%] absolute top-[560px] left-[50%] " src="/scrollDownIcon.svg" alt="" />
         </div>
     );
 }
