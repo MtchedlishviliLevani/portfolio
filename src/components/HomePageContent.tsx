@@ -48,14 +48,13 @@ function HomePageContent() {
                 <p className="text-white text-center text-[12px] md:text-[20px] md:text-left md:max-w-[700px]">
                     {data.home.experience}
                 </p>
-                <div className="my-[10px] flex gap-3 items-center">
-                    <p className="text-white text-center text-[14px] md:text-[20px] my-[10px] md:text-left underline leading-5 underline-offset-4 cursor-pointer">See more about me</p><img className="arrow md:hidden translate-y-1 mt-[7px]" src="/arrow.svg" alt="" />
-                </div>
+
             </div>
             <div className="my-[40px] sm:my-[60px]">
-                <button className="w-[100%] text-[14px] md:w-[initial] md:px-7 py-4  md:text-[24px] bg-[#FF6F61] text-white rounded-[8px] hover:shadow-lg hover:hover:bg-[#FF8976]">
+                <a rel="stylesheet" href="/Levan Mtchedlishvili CV.pdf" download="Levan Mtchedlishvili's CV" >  <button className="w-[100%] text-[14px] md:w-[initial] md:px-7 py-4  md:text-[24px] bg-[#FF6F61] text-white rounded-[8px] hover:shadow-lg hover:hover:bg-[#FF8976]">
                     Download CV
                 </button>
+                </a>
             </div>
         </div>
     );

@@ -9,65 +9,74 @@
     {
       "id": "1",
       "title": "Audiophile Ecommerce Page",
+      "link": "https://audiophile-ecommerce-page-l6c21.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/audiophile-ecommerce-page",
       "imageSrc": "/audiophile-ecommerce-website.png",
       "description": "A productivity management tool.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
-        "/framer-motion-logo.png"
-      ],
-      "link": "https://audiophile-ecommerce-page-l6c21.vercel.app/"
-    },
-    {
-      "id": "2",
-      "link": "https://entertainment-web-app-ten-mu.vercel.app/auth",
-      "title": "Entertainment-Web-App ",
-      "imageSrc": "/entertainment-web-app.png",
-      "description": "An online shopping platform.",
-      "techIcons": ["/tailwindIcon.png", "/logos_react.png"]
-    },
-    {
-      "id": "3",
-      "title": "Dev-Jobs Web App",
-      "imageSrc": "/devjobs.png",
-      "description": "A social networking application.",
-      "techIcons": [
-        "/tailwindIcon.png",
-        "/logos_react.png",
-        "/framer-motion-logo.png"
+        "/framer-motion.svg",
+        "/redux-toolkit-logo.png",
+        "react-router.png"
       ]
     },
     {
+      "id": "2",
+      "link": "https://entertainment-web-app-ten-mu.vercel.app",
+      "repository": "https://github.com/MtchedlishviliLevani/entertainment-web-app",
+      "title": "Entertainment-Web-App ",
+      "imageSrc": "/entertainment-web-app.png",
+      "description": "An online shopping platform.",
+      "techIcons": ["/tailwindIcon.png", "/logos_react.png", "react-router.png"]
+    },
+    {
+      "id": "3",
+      "link": "https://dev-jobs-web-app-gamma.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/dev-jobs-web-app",
+      "title": "Dev-Jobs Web App",
+      "imageSrc": "/devjobs.png",
+      "description": "A social networking application.",
+      "techIcons": ["/tailwindIcon.png", "/next-js.svg", "/framer-motion.svg"]
+    },
+    {
       "id": "4",
+      "link": "https://kanban-task-management-web-app-heq8.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/kanban-task-management-web-app",
       "title": "Kanban Managment Web App",
       "imageSrc": "/task-management-website.png",
       "description": "A social networking application.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
-        "/framer-motion-logo.png"
+        "/redux-toolkit-logo.png"
       ]
     },
     {
       "id": "5",
-      "title": "Password Generator",
-      "imageSrc": "/password-generator.png",
-      "description": "A social networking application.",
+      "link": "https://monito-web-page.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/monito-web-page",
+      "title": "Monito",
+      "imageSrc": "/monito.PNG",
+      "description": "",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
-        "/framer-motion-logo.png"
+        "/framer-motion.svg",
+        "react-router.png"
       ]
     },
     {
       "id": "6",
+      "link": "https://planets-website-three.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/planets-website",
       "title": "Planets Web Page",
       "imageSrc": "/planet-fact-site.png",
       "description": "A social networking application.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
-        "/framer-motion-logo.png"
+        "/framer-motion.svg"
       ]
     }
   ],
@@ -76,24 +85,14 @@
     "aboutText": "I'm Levan, a 24-year-old self-taught front-end developer. Currently, I'm mastering <b>React.js</b> to create dynamic and responsive user interfaces. I also have experience with <b>Next.js</b> for server-side rendering, and I have started learning backend development with <b>Express.js</b> a few months ago. While my primary focus remains on front-end development, I'm eager to further explore backend development and eventually become a full-stack developer. The challenges of front-end development are both motivating and rewarding for me.",
     "learningExperience": [
       {
-        "organization": "ILIA STATE UNIVERSITY, Tbilisi, Georgia",
-        "program": "Bachelor of Business Administration",
-        "dates": "2018-2022"
+        "organization": "New Horizons, Online",
+        "program": "Front-End Programming with React",
+        "dates": "12/10/2024 - 12/01/2025"
       },
       {
-        "organization": "SCSA, Tbilisi, Georgia",
-        "program": "Front-End Course (HTML, CSS, JavaScript)",
-        "dates": "09/09/2022 - 09/12/2022"
-      },
-      {
-        "organization": "Unilab, Tbilisi, Georgia",
-        "program": "Front-End Course (HTML, CSS, JavaScript)",
-        "dates": "21/01/2023 - 15/04/2023"
-      },
-      {
-        "organization": "Academy Of Digital Industry, Tbilisi, Georgia",
-        "program": "JavaScript Course",
-        "dates": "15/05/2023 - 15/07/2023"
+        "organization": "Tbilisi School of Communication, Tbilisi, Georgia",
+        "program": "Python/Django",
+        "dates": "10/09/2024 - 25/12/2024"
       },
       {
         "organization": "BitCamp, Tbilisi, Georgia",
@@ -101,43 +100,48 @@
         "dates": "21/02/2024 - 15/05/2024"
       },
       {
-        "organization": "Tbilisi School of Communication, Tbilisi, Georgia",
-        "program": "Python/Django",
-        "dates": "10/09/2024 - 25/12/2024"
+        "organization": "Academy Of Digital Industry, Tbilisi, Georgia",
+        "program": "JavaScript Course",
+        "dates": "15/05/2023 - 15/07/2023"
       },
       {
-        "organization": "Tbilisi School of Communication, Tbilisi, Georgia",
-        "program": "Python/Django",
-        "dates": "10/09/2024 - 25/12/2024"
+        "organization": "Unilab, Tbilisi, Georgia",
+        "program": "Front-End Course (HTML, CSS, JavaScript)",
+        "dates": "21/01/2023 - 15/04/2023"
       },
       {
-        "organization": "New Horizons, Online",
-        "program": "Front-End Programming with React",
-        "dates": "12/10/2024 - 12/01/2025"
+        "organization": "SCSA, Tbilisi, Georgia",
+        "program": "Front-End Course (HTML, CSS, JavaScript)",
+        "dates": "09/09/2022 - 09/12/2022"
+      },
+      {
+        "organization": "ILIA STATE UNIVERSITY, Tbilisi, Georgia",
+        "program": "Bachelor of Business Administration",
+        "dates": "2018-2022"
       }
     ],
     "techStack": [
-      [
-        { "logo": "/htmlIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      { "logo": "/htmlIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
 
-        { "logo": "/cssIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
-        {
-          "logo": "/javascriptIcon.png",
-          "backgroundColor": "rgb(0 0 0 / 0.1)"
-        },
-        { "logo": "/logos_react.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
-        { "logo": "/tailwindIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
-        {
-          "logo": "/logos_git-icon.png",
-          "backgroundColor": "rgb(0 0 0 / 0.1)"
-        },
-        {
-          "logo": "/icons_github-fill.png",
-          "backgroundColor": "rgb(0 0 0 / 0.1)"
-        },
-        { "logo": "/ts-logo.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
-        { "logo": "/next-js.svg", "backgroundColor": "rgb(0 0 0 / 0.1)" }
-      ]
+      { "logo": "/cssIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      {
+        "logo": "/javascriptIcon.png",
+        "backgroundColor": "rgb(0 0 0 / 0.1)"
+      },
+      { "logo": "/logos_react.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      { "logo": "/tailwindIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      {
+        "logo": "/logos_git-icon.png",
+        "backgroundColor": "rgb(0 0 0 / 0.1)"
+      },
+      {
+        "logo": "/icons_github-fill.png",
+        "backgroundColor": "rgb(0 0 0 / 0.1)"
+      },
+      { "logo": "/ts-logo.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      { "logo": "/next-js.svg", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      { "logo": "/pythonIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
+      { "logo": "/djangoIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" }
     ],
     "buttonList": ["General Information", "Education", "Tech Stack"]
   },

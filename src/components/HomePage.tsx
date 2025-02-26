@@ -19,14 +19,14 @@ const HomePage = forwardRef<HTMLElement, HomePageProps>(({ activeSection, setAct
             }, 100),
         []
     );
-
+    // Define the scroll event handler
     const handleScroll = useCallback(() => {
         debouncedSetScrollY(window.scrollY);
     }, [debouncedSetScrollY]);
 
+    // Add and remove the scroll event listener
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        console.log("target1")
         return () => {
             window.removeEventListener("scroll", handleScroll);
             debouncedSetScrollY.cancel(); // Cancel pending calls on unmount
@@ -34,21 +34,25 @@ const HomePage = forwardRef<HTMLElement, HomePageProps>(({ activeSection, setAct
     }, [handleScroll, debouncedSetScrollY]);
 
     useEffect(() => {
-        console.log("target1")
-
-        if (myContext?.isInnerWidthMore768 && scrollY > 80) {
-            setHeaderBg("#000"); // Dark background when scrolling down on large screens
-        } else if (!myContext?.isInnerWidthMore768) {
-            setHeaderBg(myContext?.isOpenNavigation ? "transparent" : "#16222E");
+        if (myContext?.isInnerWidthMore768 && !myContext?.isOpenNavigation) {
+            if (scrollY > 10) {
+                setHeaderBg("rgba(0,0,0,0.9)")
+            } else {
+                setHeaderBg("transparent")
+            }
         } else {
-            setHeaderBg("transparent");
+            setHeaderBg("rgba(0,0,0,0.9)")
         }
+
+
     }, [scrollY, myContext?.isInnerWidthMore768, myContext?.isOpenNavigation]);
 
     const boxVariants = {
         hidden: { opacity: 0, left: "-100%" },
         visible: { opacity: 1, left: "0%" },
     };
+
+    console.log(headerBg, "headerBg", scrollY, "scrollY", myContext?.isInnerWidthMore768, "isInnerWidthMore768", myContext?.isOpenNavigation, "isOpenNavigation")
     return (
         <section id='home' ref={ref}>
 
@@ -60,7 +64,7 @@ const HomePage = forwardRef<HTMLElement, HomePageProps>(({ activeSection, setAct
                 transition={{ duration: 2, ease: "easeInOut" }}
 
                 style={{ "background": headerBg }}
-                className={`fixed   top-0 h-[82px] md:h-[initial]  z-[999] w-[100%]  `}
+                className={`fixed top-0 h-[82px] md:h-[initial]  z-[999] w-[100%]  `}
             >
                 <div
 

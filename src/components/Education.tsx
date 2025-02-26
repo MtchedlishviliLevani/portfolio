@@ -1,13 +1,14 @@
 import data from "../data/data.json"
 function Education() {
 
+
     return (
         <div className=" lg:mt-[50px] mt-[10px]">
             <h1 className="text-[20px] md:text-[56px] font-bold text-white ">
                 Education //
             </h1>
             <div className="flex flex-col lg:flex-row lg:gap-[100px] mt-[30px] lg:mt-[20px]">
-                <div className="grid xsm:grid-cols-2 lg:grid-cols-3 gap-x-[20px]">
+                <div className="grid lg:grid-flow-col grid-cols-1 xsm:grid-cols-2 xsm:grid-flow-column  lg:grid-rows-3 gap-x-[20px]">
                     {data.about.learningExperience.map((item, i) => (
                         <div
                             key={i}

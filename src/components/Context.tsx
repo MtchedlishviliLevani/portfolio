@@ -3,7 +3,7 @@ import { appStateContext } from "../helper/createContext"
 
 
 function Context({ children }: { children: ReactNode }) {
-    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<boolean | null>(window.innerWidth > 767)
+    const [isInnerWidthMore768, setIsInnerWidthMore768] = useState<boolean>(window.innerWidth > 767)
     const [isOpenNavigation, setIsOpenNavigation] = useState<boolean>(false)
 
 

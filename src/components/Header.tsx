@@ -25,6 +25,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
         <header className="flex py-[15px] md:py-[35px] justify-between items-center">
             <img src={Logo} className="w-[60px] md:w-[80px]" alt="Logo" loading="lazy" />
             {/* only mobile */}
+
             <div
                 onClick={handleClickNavigationBar}
                 className="z-[999] cursor-pointer [&>span]:w-[45px] [&>span]:h-[1.5px] [&>span]:bg-white flex flex-col gap-[10px] md:hidden"

@@ -24,7 +24,6 @@ const Projects = forwardRef<HTMLElement>((_, ref) => {
                         <div key={item.id}>
                             <ProjectCard item={item} /></div>
                     ))}
-                    {/* {dataJson?.projects.map((item) => <img key={item?.id} src={item?.imageSrc} />)} */}
                 </div>
                 <div></div>
                 <a
