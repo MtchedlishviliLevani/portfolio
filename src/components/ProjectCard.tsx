@@ -15,42 +15,50 @@ function ProjectCard({ item }: { item: Items }) {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="bg-[#2f114d78] group cursor-pointer  sm:max-w-[400px] md:max-w-[initial] rounded-lg h-[100%] relative"
+            className=""
         >
-            <div className="relative group">
-                <img loading='lazy'
-                    className="rounded-t-lg cursor-pointer w-full h-[200px] "
-                    src={item?.imageSrc}
-                    alt="project-img"
-                />
-                <div className="absolute cursor-pointer inset-0 bg-black opacity-0 group-hover:opacity-40  transition-opacity duration-300 rounded-t-lg"></div>
-                <div className="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] z-50 text-white  justify-center gap-4 cursor-pointer flex opacity-0 transition-all duration-1000 group-hover:opacity-100">
-                    {item?.techIcons?.map((icon, index) => (
-                        <img key={index} loading='lazy'
-                            className="w-[30px] md:w-[40px] cursor-pointer"
-                            src={icon}
-                            alt="tech-icon"
-                        />
-                    ))}
-                </div>
-            </div>
-            <div className="px-[20px] py-[40px]">
-                <h2 className="text-center text-[#1bbca9] md:mt-[15px] xl:mt-[40px] text-[16px] xsm:text-[13px] md:text-[24px] font-bold  px-[10px]">
-                    {item?.title}
-                </h2>
-                <div className="flex gap-[20px] items-center mt-[10px] xl:mt-[20px]  justify-center">
-                    <button className="text-white text-[13px]  md:text-[24px]">
-                        <a href={item?.link} target='_blank'>See Live</a>
-                    </button>
 
-                    <a href={item.repository}><img loading='lazy'
-                        className="w-[30px] md:w-[40px] cursor-pointer"
-                        src="/icons_github-fill.png"
-                        alt="github-icon"
-                    />
-                    </a>
+
+            <div className="border rounded-lg shadow-sm bg-gray-800 border-gray-700 group">
+                <div className='h-1/2 overflow-hidden relative  rounded-t-lg'>
+                    <img className="rounded-t-lg h-[200px] w-full transition-transform duration-300 group-hover:scale-105" src={item.imageSrc} alt="" />
+                    {/* Hover Overlay with Tech Icons */}
+                    <div className="absolute cursor-pointer inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
+                        <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+                            {item?.techIcons?.map((icon, index) => (
+                                <img
+                                    key={index}
+                                    src={icon}
+                                    alt="Tech icon"
+                                    className="w-9 h-9 object-contain filter invert brightness-0"
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="p-5">
+                    
+                        <h5 className="mb-2 text-[20px] md:text-2xl font-bold tracking-tight  text-white">{item.title}</h5>
+                   
+                    <p className="mb-3 line-clamp-3 md:line-clamp-none font-normal text-gray-400">{item.description}</p>
+                    <div className='flex justify-between mt-6'>
+                        <a href={item.link} target='_blank' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg">
+                            Live Demo
+                            <svg className="rotate-[-30deg] w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                        <a href={item.repository} target='_blank' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[brown] rounded-lg">
+                            Repository
+                            <svg className="rotate-[-30deg] w-3.5 h-3.5 ms-2 left-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+
         </motion.div>
     )
 }
