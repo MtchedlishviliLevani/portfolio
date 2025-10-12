@@ -48,11 +48,10 @@ const HomePage = forwardRef<HTMLElement, HomePageProps>(({ activeSection, setAct
     }, [scrollY, myContext?.isInnerWidthMore768, myContext?.isOpenNavigation]);
 
     const boxVariants = {
-        hidden: { opacity: 0, left: "-100%" },
-        visible: { opacity: 1, left: "0%" },
+        hidden: { opacity: 0, },
+        visible: { opacity: 1,   },
     };
 
-    console.log(headerBg, "headerBg", scrollY, "scrollY", myContext?.isInnerWidthMore768, "isInnerWidthMore768", myContext?.isOpenNavigation, "isOpenNavigation")
     return (
         <section id='home' ref={ref}>
 
