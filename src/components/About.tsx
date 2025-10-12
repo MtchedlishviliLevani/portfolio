@@ -5,6 +5,7 @@ import Education from "./Education";
 import TechSkills from "./TechSkills";
 import { useInView } from 'react-intersection-observer';
 import data from "../data/data.json"
+import WorkingExperience from "./WorikingExperience";
 
 // Define the type for the ref
 type AboutProps = React.HTMLProps<HTMLDivElement>;
@@ -49,7 +50,7 @@ const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
                     <div className="flex justify-center">
                         <div
                             style={{ background: "rgb(0 0 0 / 0.1)" }}
-                            className="bg-opacity-10 mt-[50px] *:text-white px-[10px] flex-col sm:flex-row w-[100%] gap-5 rounded-[8px] sm:px-[20px] py-[20px] flex sm:gap-7 items-center max-w-[500px] justify-center"
+                            className="bg-opacity-10 mt-[50px] *:text-white px-[10px] flex-col sm:flex-row w-[100%] gap-5 rounded-[8px] sm:px-[20px] py-[20px] flex sm:gap-7 items-center max-w-[600px] justify-center"
                         >
                             {data.about.buttonList.map((item, i) => (
                                 <button
@@ -71,13 +72,7 @@ const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
                     variants={animationVariants}
                     transition={{ duration: 0.3 }}
                 >
-                    {activeButtonIndex === 0 ? (
-                        <GeneralInfoAboutMe />
-                    ) : activeButtonIndex === 1 ? (
-                        <Education />
-                    ) : (
-                        <TechSkills />
-                    )}
+                    {activeButtonIndex===0?<GeneralInfoAboutMe/>:activeButtonIndex===1?<WorkingExperience/>:activeButtonIndex===2?<Education/>:<TechSkills/>}
                 </motion.div>
             </div>
         </section>

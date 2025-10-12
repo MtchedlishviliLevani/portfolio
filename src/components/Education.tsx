@@ -3,7 +3,7 @@ function Education() {
 
 
     return (
-        <div className=" lg:mt-[50px] mt-[10px]">
+        <div className="mt-[50px]">
             <h1 className="text-[20px] md:text-[56px] font-bold text-white ">
                 Education //
             </h1>

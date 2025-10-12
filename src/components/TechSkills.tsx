@@ -2,8 +2,8 @@ import data from "../data/data.json";
 export default function TechSkills() {
 
     return (
-        <div className="py-[30px]">
-            <h1 className="text-[20px] sm:text-[48px] md:text-[56px] font-bold text-white ">My Tech Stack //</h1>
+        <div className="mt-[50px]">
+            <h1 className="text-[20px] md:text-[56px] font-bold text-white ">My Tech Stack //</h1>
             <h3 className="text-white text-[14px] sm:text-[24px]">
                 Technologies I’ve been working with recently
             </h3>

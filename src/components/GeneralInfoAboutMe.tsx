@@ -2,7 +2,7 @@ import data from "../data/data.json"
 function GeneralInfoAboutMe() {
     return (
         <div className=" mt-[50px]">
-            <h1 className="text-[20px] sm:text-[48px] md:text-[56px] font-bold text-white  ">
+            <h1 className="text-[20px] md:text-[56px] font-bold text-white   ">
                 {data.about.title}
             </h1>
 
