@@ -3,16 +3,16 @@
     "navigation": ["Home", "About", "Projects", "Contact"],
     "role": "Front-End Developer",
     "introduction": "👋 Hey, I’m Levan Mtchedlishvili",
-    "experience": "2 years of React experience, focused on building creative and effective web applications"
+    "experience": "3 years of React experience, focused on building creative and effective web applications"
   },
   "projects": [
     {
       "id": "1",
-      "title": "Audiophile Ecommerce Page",
+      "title": "Audiophile E-commerce",
       "link": "https://audiophile-ecommerce-page-l6c21.vercel.app/",
       "repository": "https://github.com/MtchedlishviliLevani/audiophile-ecommerce-page",
-      "imageSrc": "/audiophile-ecommerce-website.png",
-      "description": "A productivity management tool.",
+      "imageSrc": "/audiophile.PNG",
+      "description": "An e-commerce website to browse, select, and purchase high-quality audio products online.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
@@ -23,42 +23,20 @@
     },
     {
       "id": "2",
-      "link": "https://entertainment-web-app-ten-mu.vercel.app",
-      "repository": "https://github.com/MtchedlishviliLevani/entertainment-web-app",
-      "title": "Entertainment-Web-App ",
-      "imageSrc": "/entertainment-web-app.png",
-      "description": "An online shopping platform.",
-      "techIcons": ["/tailwindIcon.png", "/logos_react.png", "react-router.png"]
+      "link": "https://blog-api-8311.onrender.com/api-docs/",
+      "repository": "http://github.com/mtchedlishviliLevani/blog-Api",
+      "title": "Blog-API ",
+      "imageSrc": "/backend.png",
+      "description": "A Node.js/Express REST API for managing blog posts, categories, users, and secure authentication.",
+      "techIcons": ["/node-logo.png", "/expressJs.svg"]
     },
     {
       "id": "3",
-      "link": "https://dev-jobs-web-app-gamma.vercel.app/",
-      "repository": "https://github.com/MtchedlishviliLevani/dev-jobs-web-app",
-      "title": "Dev-Jobs Web App",
-      "imageSrc": "/devjobs.png",
-      "description": "A social networking application.",
-      "techIcons": ["/tailwindIcon.png", "/next-js.svg", "/framer-motion.svg"]
-    },
-    {
-      "id": "4",
-      "link": "https://kanban-task-management-web-app-heq8.vercel.app/",
-      "repository": "https://github.com/MtchedlishviliLevani/kanban-task-management-web-app",
-      "title": "Kanban Managment Web App",
-      "imageSrc": "/task-management-website.png",
-      "description": "A social networking application.",
-      "techIcons": [
-        "/tailwindIcon.png",
-        "/logos_react.png",
-        "/redux-toolkit-logo.png"
-      ]
-    },
-    {
-      "id": "5",
       "link": "https://monito-web-page.vercel.app/",
       "repository": "https://github.com/MtchedlishviliLevani/monito-web-page",
       "title": "Monito",
       "imageSrc": "/monito.PNG",
-      "description": "",
+      "description": "A modern pet store web app to buy pets, food, toys, and accessories online.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
@@ -67,22 +45,43 @@
       ]
     },
     {
-      "id": "6",
-      "link": "https://planets-website-three.vercel.app/",
-      "repository": "https://github.com/MtchedlishviliLevani/planets-website",
-      "title": "Planets Web Page",
-      "imageSrc": "/planet-fact-site.png",
-      "description": "A social networking application.",
+      "id": "4",
+      "link": "https://kanban-task-management-web-app-heq8.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/kanban-task-management-web-app",
+      "title": "Kanban Managment App",
+      "imageSrc": "/kanban.PNG",
+      "description": "A kanban-style task management web app to organize, track, and manage projects efficiently.",
       "techIcons": [
         "/tailwindIcon.png",
         "/logos_react.png",
-        "/framer-motion.svg"
+        "/redux-toolkit-logo.png"
       ]
+    },
+    {
+      "id": "5",
+      "link": "https://shop-co-tau-orcin.vercel.app/",
+      "repository": "https://github.com/MtchedlishviliLevani/shop.co",
+      "title": "SHOP.CO",
+      "imageSrc": "/shop.PNG",
+      "description": "A modern clothing store web page to browse, select, and purchase fashion items.",
+      "techIcons": ["/tailwindIcon.png", "/next-js.svg", "/framer-motion.svg"]
+    },
+    {
+      "id": "6",
+      "link": "https://entertainment-web-app-ten-mu.vercel.app",
+      "repository": "https://github.com/MtchedlishviliLevani/entertainment-web-app",
+      "title": "Entertainment-Web-App ",
+      "imageSrc": "/movies.PNG",
+      "description": "A web app to store, browse, and manage your favorite movies and TV shows.",
+      "techIcons": ["/tailwindIcon.png", "/logos_react.png", "react-router.png"]
     }
   ],
   "about": {
     "title": "About Me //",
-    "aboutText": "I'm Levan, a 24-year-old self-taught front-end developer. Currently, I'm mastering <b>React.js</b> to create dynamic and responsive user interfaces. I also have experience with <b>Next.js</b> for server-side rendering, and I have started learning backend development with <b>Express.js</b> a few months ago. While my primary focus remains on front-end development, I'm eager to further explore backend development and eventually become a full-stack developer. The challenges of front-end development are both motivating and rewarding for me.",
+    "aboutText": "I'm Levan, a 25-year-old self-taught front-end developer. Currently, I'm mastering <b>React.js</b> to create dynamic and responsive user interfaces. I also have experience with <b>Next.js</b> for server-side rendering, and I have started learning backend development with <b>Express.js</b> a few months ago. While my primary focus remains on front-end development, I'm eager to further explore backend development and eventually become a full-stack developer. The challenges of front-end development are both motivating and rewarding for me.",
+    "workingExperience":{
+     "title":"Work Experience //"
+    },
     "learningExperience": [
       {
         "organization": "New Horizons, Online",
@@ -143,7 +142,7 @@
       { "logo": "/pythonIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" },
       { "logo": "/djangoIcon.png", "backgroundColor": "rgb(0 0 0 / 0.1)" }
     ],
-    "buttonList": ["General Information", "Education", "Tech Stack"]
+    "buttonList": ["General Information", "Working Experience", "Education", "Tech Stack"]
   },
   "contact": {
     "title": "Contact Me",
